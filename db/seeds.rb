@@ -18,8 +18,15 @@ include Faker
 end
  users = User.all
 
+ ethan = User.create!(
+    username: 'Franman',
+    email: 'ethanfranson2@gmail.com',
+    password: 'helloworld'
+ )
+
 10.times do
   Item.create!(
+  user: users.sample,
   name: Faker::Hipster.word
   )
 end
