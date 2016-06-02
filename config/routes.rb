@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'items/index'
-
-  get 'items/show'
-
-  get 'items/new'
-
-  get 'items/edit'
-
   get 'welcome/index'
 
   get 'welcome/about'
