@@ -1,5 +1,6 @@
 <% if @items.destroyed? %>
 $('#items-<%= @items.id %>').hide();
+$('.notice').html("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:notice] %></div>")
 <% else %>
- $("#item-<%= @item.id %>").prepend("<div class='alert alert-danger'><%= flash[:error] = "Your comment couldn't be deleted. Please try again." %></div>");
+ $('.alert').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
 <% end %>

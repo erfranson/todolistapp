@@ -8,9 +8,9 @@ class ItemsController < ApplicationController
     @items = @user.items.new(params.require(:item).permit(:name))
 
     if @items.save
-       flash[:notice] = "To do item saved"
+       flash[:notice] = "\"#{@items.name}\" was added to your list."
      else
-       flash[:alert] = "There was error saving item ."
+       flash[:alert] = "There was error saving item."
      end
     redirect_to @user
   end
@@ -23,7 +23,6 @@ class ItemsController < ApplicationController
       flash[:notice] = "\"#{@items.name}\" was deleted successfully."
     else
       flash[:alert] = "There was a error saving post."
-      render :show
     end
       respond_to do |format|
        format.html
