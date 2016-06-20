@@ -1,5 +1,5 @@
 <div id="items-<%= item.id %>">
   <p><%= item.name %>
   <%= link_to "delete", user_item_path(item.user, item), method: :delete, class: 'glyphicon glyphicon-ok', remote: true %></p>
-  <p><%= distance_of_time_in_words(Time.now, item.created_at + 7.days,) + " remaining" %></p>
+  <p><%= distance_of_time_in_words(Time.now, item.created_at + 7.days) + " remaining" %></p>
 </div>
